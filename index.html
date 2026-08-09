@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SafariBookings: Compare 17,610 African Safari Holidays</title>
+  <meta name="description" content="Compare 17,610 African safari tours offered by top-rated tour operators. The largest online marketplace for African safaris with 173,336 reviews." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,600&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --brand:#c0392b;
+      --brand-dark:#9c2c20;
+      --orange:#e8811a;
+      --link:#2f7ab5;
+      --ink:#3a3a3a;
+      --muted:#777;
+      --line:#e2e2e2;
+      --bg:#ffffff;
+      --bg-soft:#f2f2f2;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{background:#fff}
+    body{font-family:'Roboto',Arial,sans-serif;color:var(--ink);line-height:1.55;font-size:15px;background:#fff}
+    h1,h2,h3,h4,.serif{font-family:'Playfair Display',Georgia,serif}
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
+    img{display:block;max-width:100%}
+    .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+
+    /* Header */
+    header.site{background:var(--brand);position:sticky;top:0;z-index:50;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+    .nav{display:flex;align-items:center;gap:28px;height:56px}
+    .logo{display:flex;flex-direction:column;line-height:1;color:#fff;font-family:'Playfair Display',serif}
+    .logo .top{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;letter-spacing:.5px}
+    .logo .top span sup{font-size:11px}
+    .logo .sub{font-size:9.5px;letter-spacing:3px;color:#f3d9d5;margin-top:3px;font-family:'Roboto',sans-serif}
+    .logo .paw{width:34px;height:34px;fill:#fff;opacity:.95}
+    nav.main{display:flex;gap:26px;margin-left:10px}
+    nav.main a{color:#fff;font-size:15px;font-weight:400}
+    nav.main a:hover{color:#ffe3df;text-decoration:none}
+    .nav .right{margin-left:auto;display:flex;align-items:center;gap:20px}
+    .heart-wrap{position:relative;display:flex;align-items:center;gap:7px;color:#fff}
+    .heart-wrap svg{width:24px;height:24px;fill:#fff}
+    .heart-wrap .badge{position:absolute;top:-6px;left:14px;background:#fff;color:var(--brand);border-radius:50%;font-size:11px;width:16px;height:16px;display:flex;align-items:center;justify-content:center;font-weight:700}
+    .search{display:flex;align-items:center;background:#fff;border-radius:3px;overflow:hidden;height:34px}
+    .search input{border:0;outline:0;padding:0 12px;font-size:14px;width:190px;font-family:inherit}
+    .search button{border:0;background:#fff;padding:0 12px;cursor:pointer}
+    .search button svg{width:16px;height:16px;fill:var(--muted)}
+
+    /* Hero */
+    .hero{position:relative;min-height:540px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden}
+    .hero .bg{position:absolute;inset:0;background:url('images/hero-elephants.png') center/cover no-repeat;filter:brightness(.85)}
+    .hero .content{position:relative;z-index:2;width:100%;padding:0 20px}
+    .hero h1{font-size:46px;font-weight:800;text-shadow:0 2px 12px rgba(0,0,0,.55);letter-spacing:.5px}
+    .hero .tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:23px;margin-top:6px;text-shadow:0 2px 10px rgba(0,0,0,.55);font-weight:600}
+
+    /* Search widget */
+    .searchbar{margin:34px auto 0;max-width:860px;background:rgba(255,255,255,.96);border-radius:4px;display:flex;align-items:stretch;box-shadow:0 6px 30px rgba(0,0,0,.35);overflow:hidden}
+    .searchbar .field{flex:1;display:flex;align-items:center;gap:10px;padding:14px 16px;border-right:1px solid var(--line);text-align:left}
+    .searchbar .field svg{width:20px;height:20px;fill:var(--muted);flex-shrink:0}
+    .searchbar .field .lbl{color:#999;font-size:15px}
+    .searchbar .field .col{display:flex;flex-direction:column;line-height:1.2}
+    .searchbar .field .col .small{font-size:12px;color:#999}
+    .searchbar .field .col .big{font-size:15px;color:var(--ink);font-weight:500}
+    .searchbar .cta{background:var(--orange);color:#fff;border:0;padding:0 26px;font-size:17px;font-weight:700;display:flex;align-items:center;gap:8px;cursor:pointer;font-family:'Playfair Display',serif;white-space:nowrap}
+    .searchbar .cta:hover{background:#d9761a}
+
+    /* Trust bar */
+    .trust{background:#fff;border-bottom:1px solid var(--line)}
+    .trust .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding:22px 0}
+    .trust .item{display:flex;align-items:center;gap:10px;font-size:15px;color:#555}
+    .trust .item svg{width:26px;height:26px;fill:var(--brand);flex-shrink:0}
+    .trust .item b{color:#333}
+
+    /* Featured In */
+    .featured{background:var(--bg-soft);padding:30px 0}
+    .featured .box{background:#fff;border:1px solid var(--line);border-radius:4px;padding:26px}
+    .featured .cap{text-align:center;color:#999;font-size:14px;margin-top:-40px;margin-bottom:22px}
+    .featured .cap span{background:var(--bg-soft);padding:0 14px}
+    .featured .logos{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
+    .featured .logos .m{font-family:'Playfair Display',serif;color:#b0b0b0;font-weight:700;text-align:center;flex:1;min-width:110px;font-size:17px;line-height:1.1}
+    .featured .logos .m small{display:block;font-size:10px;letter-spacing:1px;font-family:'Roboto',sans-serif;font-weight:400}
+
+    section{padding:44px 0}
+    .section-title{font-size:26px;font-weight:700;color:#333;margin-bottom:22px}
+
+    /* Countries */
+    .countries{display:grid;grid-template-columns:300px 1fr;gap:0;border:1px solid var(--line);border-radius:4px;overflow:hidden}
+    .clist{list-style:none;background:#fafafa}
+    .clist li{border-bottom:1px solid var(--line)}
+    .clist li:last-child{border-bottom:0}
+    .clist button{width:100%;background:none;border:0;display:flex;gap:14px;align-items:center;padding:15px 18px;cursor:pointer;font-size:16px;text-align:left;font-family:inherit}
+    .clist .rank{color:#888;font-weight:500;width:26px}
+    .clist .name{color:var(--link);font-weight:500}
+    .clist li.active{background:#3b3b3b;position:relative}
+    .clist li.active .name,.clist li.active .rank{color:#fff}
+    .clist li.active::after{content:"";position:absolute;right:-11px;top:50%;transform:translateY(-50%);border:11px solid transparent;border-left-color:#3b3b3b}
+    .cpanel{position:relative;color:#fff;background:#333 url('images/tanzania.png') center/cover;min-height:430px}
+    .cpanel .veil{position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,20,20,.85),rgba(20,20,20,.35))}
+    .cpanel .inner{position:relative;z-index:2;padding:26px 30px}
+    .cpanel h3{font-size:30px;display:inline-block;vertical-align:middle}
+    .cpanel .stars{color:var(--orange);letter-spacing:1px;font-size:18px;margin-left:8px}
+    .cpanel .rank-tag{font-size:14px;color:#ddd;margin:6px 0 14px}
+    .cpanel p{font-size:14.5px;color:#eaeaea;max-width:640px;line-height:1.6}
+    .cpanel .facts{display:flex;flex-wrap:wrap;gap:26px;margin-top:18px}
+    .cpanel .fact{display:flex;gap:10px}
+    .cpanel .fact svg{width:26px;height:26px;fill:var(--orange);flex-shrink:0}
+    .cpanel .fact b{display:block;color:#fff;font-size:14px}
+    .cpanel .fact span{font-size:13px;color:#d5d5d5}
+    .cpanel .btns{display:flex;gap:14px;margin-top:24px;flex-wrap:wrap}
+    .btn-dark{background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.5);color:#fff;padding:11px 20px;border-radius:3px;font-weight:600;display:flex;align-items:center;gap:8px;cursor:pointer;font-family:inherit;font-size:14px}
+    .btn-dark:hover{background:rgba(0,0,0,.7);text-decoration:none;color:#fff}
+
+    /* Tours */
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .tour{border:1px solid var(--line);border-radius:4px;overflow:hidden;background:#fff}
+    .tour .thumb{position:relative;height:180px}
+    .tour .thumb img{width:100%;height:100%;object-fit:cover}
+    .tour .thumb .title{position:absolute;left:0;bottom:0;right:0;padding:16px;color:#fff;font-family:'Playfair Display',serif;font-size:21px;font-weight:700;line-height:1.2;text-shadow:0 1px 6px rgba(0,0,0,.7);background:linear-gradient(transparent,rgba(0,0,0,.55))}
+    .tour .heart{position:absolute;top:12px;right:12px;background:rgba(255,255,255,.9);border-radius:50%;width:34px;height:34px;display:flex;align-items:center;justify-content:center}
+    .tour .heart svg{width:18px;height:18px;fill:#c0392b}
+    .tour .body{padding:16px}
+    .tour .price{font-size:22px;color:#2e8b57;font-weight:700}
+    .tour .price small{color:#888;font-size:13px;font-weight:400}
+    .tour .meta{font-size:13.5px;color:#555;margin-top:10px}
+    .tour .meta b{color:#333}
+    .tour .visit{font-size:13px;color:#666;margin-top:8px}
+    .tour .op{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding:12px 16px}
+    .tour .op img{width:44px;height:44px;border-radius:3px;object-fit:cover}
+    .tour .op .n{font-weight:700;color:#333;font-size:14px}
+    .tour .op .r{color:var(--orange);font-size:13px}
+    .tour .op .r span{color:#666}
+
+    .btn-out{display:inline-flex;align-items:center;gap:8px;border:1px solid #cfcfcf;background:#fff;color:var(--link);padding:12px 22px;border-radius:3px;font-weight:600;margin-top:26px;cursor:pointer;font-family:inherit;font-size:15px}
+    .btn-out:hover{background:#f7f7f7;text-decoration:none}
+
+    /* Operators */
+    .ops{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+    .op-card{border:1px solid var(--line);border-radius:4px;overflow:hidden;background:#fff}
+    .op-card .thumb{position:relative;height:150px}
+    .op-card .thumb img{width:100%;height:100%;object-fit:cover}
+    .op-card .ribbon{position:absolute;top:0;left:14px;background:var(--orange);color:#fff;font-family:'Playfair Display',serif;font-weight:700;padding:6px 12px 14px;clip-path:polygon(0 0,100% 0,100% 100%,50% 85%,0 100%);font-size:16px}
+    .op-card .title{position:absolute;left:14px;bottom:12px;color:#fff;font-family:'Playfair Display',serif;font-size:20px;font-weight:700;text-shadow:0 1px 6px rgba(0,0,0,.7);padding-right:14px}
+    .op-card .heart{position:absolute;top:12px;right:12px;background:rgba(255,255,255,.9);border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center}
+    .op-card .heart svg{width:16px;height:16px;fill:#c0392b}
+    .op-card .foot{display:flex;align-items:center;gap:12px;padding:14px}
+    .op-card .foot img{width:46px;height:46px;border-radius:50%;object-fit:cover;border:1px solid var(--line)}
+    .op-card .foot .stars{color:var(--orange);font-size:15px}
+    .op-card .foot .rev{font-size:13px;color:#666;margin-top:2px}
+
+    /* Blog */
+    .blog{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .post{position:relative;height:220px;border-radius:4px;overflow:hidden}
+    .post img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+    .post:hover img{transform:scale(1.05)}
+    .post .t{position:absolute;inset:0;display:flex;align-items:flex-end;padding:18px;background:linear-gradient(transparent 40%,rgba(0,0,0,.7));color:#fff;font-family:'Playfair Display',serif;font-size:21px;font-weight:700;line-height:1.25}
+
+    /* Footer */
+    footer.site{background:#4a4a4a;color:#cfcfcf;padding:44px 0 0}
+    footer .about h4{color:#fff;font-size:19px;margin-bottom:10px}
+    footer .about p{max-width:900px;font-size:14px;color:#c5c5c5}
+    footer .about a{color:#9ecbec}
+    .fcols{display:grid;grid-template-columns:repeat(5,1fr);gap:26px;margin-top:34px}
+    .fcols h5{color:#fff;font-size:16px;margin-bottom:12px;font-family:'Roboto',sans-serif;font-weight:500}
+    .fcols ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+    .fcols a{color:#c5c5c5;font-size:13.5px}
+    .fcols a:hover{color:#fff}
+    .fcols .stat b{color:#fff;font-weight:700}
+    .socials{display:flex;gap:10px;margin-top:14px}
+    .socials a{width:32px;height:32px;border-radius:50%;background:#5c5c5c;display:flex;align-items:center;justify-content:center}
+    .socials svg{width:16px;height:16px;fill:#fff}
+    .currency{display:flex;align-items:center;gap:14px;margin-top:36px;padding-bottom:30px}
+    .currency .label{font-size:14px}
+    .currency .pick{background:#5c5c5c;color:#fff;border:0;padding:10px 18px;border-radius:3px;font-weight:600;display:flex;align-items:center;gap:8px;font-family:inherit}
+    .footer-featured{background:#3f3f3f;padding:26px 0}
+    .footer-featured .cap{text-align:center;color:#aaa;font-size:13px;margin-bottom:16px}
+    .footer-featured .logos{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
+    .footer-featured .m{font-family:'Playfair Display',serif;color:#8f8f8f;font-weight:700;text-align:center;flex:1;min-width:100px;font-size:16px;line-height:1.1}
+    .footer-featured .m small{display:block;font-size:9px;letter-spacing:1px;font-family:'Roboto',sans-serif;font-weight:400}
+    .copyright{background:#333;color:#9a9a9a;text-align:center;padding:16px;font-size:12.5px}
+
+    /* Book buttons */
+    .btn-book{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;background:var(--orange);color:#fff;border:0;padding:12px 16px;border-radius:3px;font-weight:700;cursor:pointer;font-family:'Playfair Display',serif;font-size:16px;margin-top:14px}
+    .btn-book:hover{background:#d9761a}
+    .btn-book svg{width:18px;height:18px;fill:#fff}
+    .tour .body .btn-book{margin-top:14px}
+
+    /* Catalog / Browse all */
+    .catalog-tools{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:22px}
+    .catalog-tools input,.catalog-tools select{border:1px solid var(--line);border-radius:3px;padding:11px 12px;font-family:inherit;font-size:14px;color:var(--ink);background:#fff}
+    .catalog-tools input{flex:1;min-width:200px}
+    .catalog-count{font-size:14px;color:var(--muted)}
+    .catalog-count b{color:#333}
+    .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .cat-card{border:1px solid var(--line);border-radius:4px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
+    .cat-card .ct{position:relative;height:150px}
+    .cat-card .ct img{width:100%;height:100%;object-fit:cover}
+    .cat-card .ct .flag{position:absolute;top:10px;left:10px;background:var(--brand);color:#fff;font-size:12px;font-weight:600;padding:4px 9px;border-radius:3px}
+    .cat-card .cb{padding:14px;display:flex;flex-direction:column;flex:1}
+    .cat-card h4{font-size:17px;color:#333;line-height:1.25;margin-bottom:8px}
+    .cat-card .cp{font-size:19px;color:#2e8b57;font-weight:700}
+    .cat-card .cp small{color:#888;font-size:12px;font-weight:400}
+    .cat-card .cm{font-size:13px;color:#666;margin:8px 0 4px}
+    .cat-card .co{font-size:13px;color:#555;margin-top:4px}
+    .cat-card .co .stars{color:var(--orange)}
+    .cat-card .cdesc{font-size:13px;color:#666;line-height:1.5;margin:8px 0 4px}
+    .cat-card .cactions{display:flex;gap:8px;margin-top:auto;padding-top:12px}
+    .cat-card .cactions .btn-book{margin-top:0;flex:1}
+    .btn-explore{display:inline-flex;align-items:center;justify-content:center;gap:6px;flex:1;background:#fff;border:1px solid var(--brand);color:var(--brand);padding:12px 12px;border-radius:3px;font-weight:700;cursor:pointer;font-family:'Playfair Display',serif;font-size:15px}
+    .btn-explore:hover{background:#fbf1ef}
+    .load-more{display:block;margin:28px auto 0;background:#fff;border:1px solid #cfcfcf;color:var(--link);padding:13px 30px;border-radius:3px;font-weight:600;cursor:pointer;font-family:inherit;font-size:15px}
+    .load-more:hover{background:#f7f7f7}
+    .no-res{padding:40px;text-align:center;color:var(--muted);grid-column:1/-1}
+
+    /* Modal */
+    .modal-back{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}
+    .modal-back.open{display:flex}
+    .modal{background:#fff;border-radius:6px;max-width:460px;width:100%;max-height:92vh;overflow:auto;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+    .modal .mhead{background:var(--brand);color:#fff;padding:18px 22px;position:relative}
+    .modal .mhead h3{font-size:21px}
+    .modal .mhead p{font-size:13px;color:#f3d9d5;margin-top:2px}
+    .modal .mclose{position:absolute;top:14px;right:16px;background:none;border:0;color:#fff;font-size:26px;line-height:1;cursor:pointer}
+    .modal .mbody{padding:22px}
+    .modal .tour-summary{background:var(--bg-soft);border-radius:4px;padding:12px 14px;margin-bottom:18px}
+    .modal .tour-summary .tt{font-family:'Playfair Display',serif;font-weight:700;color:#333;font-size:16px;line-height:1.3}
+    .modal .tour-summary .tpr{color:#2e8b57;font-weight:700;margin-top:4px}
+    .modal label{display:block;font-size:13px;font-weight:600;color:#444;margin:12px 0 5px}
+    .modal input,.modal select{width:100%;border:1px solid var(--line);border-radius:3px;padding:11px 12px;font-family:inherit;font-size:15px;color:var(--ink)}
+    .modal input:focus,.modal select:focus{outline:2px solid var(--orange);border-color:var(--orange)}
+    .modal .frow{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .pax-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .pax-grid .pax{background:var(--bg-soft);border:1px solid var(--line);border-radius:4px;padding:10px;text-align:center}
+    .pax-grid .pax span{display:block;font-size:12px;font-weight:700;color:#444;margin-bottom:6px}
+    .pax-grid .pax input{text-align:center;padding:9px 6px}
+    .pax-total{display:flex;align-items:center;justify-content:space-between;background:#fbf1ef;border:1px solid #e8cfc9;border-radius:4px;padding:11px 14px;margin-top:12px;font-size:14px;color:#7a2418;font-weight:700}
+    .pax-total b{font-size:18px}
+    .field-hint{font-size:12px;color:#888;margin-top:4px}
+    .modal .wa-note{display:flex;align-items:center;gap:8px;font-size:12.5px;color:#666;margin-top:16px}
+    .modal .wa-note svg{width:18px;height:18px;fill:#25D366;flex-shrink:0}
+    .btn-wa{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:#25D366;color:#fff;border:0;padding:14px;border-radius:4px;font-weight:700;font-size:16px;cursor:pointer;margin-top:16px;font-family:inherit}
+    .btn-wa:hover{background:#1eb457}
+    .btn-wa svg{width:22px;height:22px;fill:#fff}
+
+    @media(max-width:960px){
+      .cards,.blog,.cat-grid{grid-template-columns:1fr 1fr}
+      .ops{grid-template-columns:1fr 1fr}
+      .countries{grid-template-columns:1fr}
+      .fcols{grid-template-columns:1fr 1fr 1fr}
+      .hero h1{font-size:34px}
+    }
+    @media(max-width:640px){
+      nav.main,.search{display:none}
+      .searchbar{flex-direction:column}
+      .searchbar .field{border-right:0;border-bottom:1px solid var(--line)}
+      .cards,.blog,.ops,.cat-grid,.trust .row{grid-template-columns:1fr}
+      .trust .row{flex-direction:column;align-items:flex-start}
+      .fcols,.featured .logos{grid-template-columns:1fr 1fr}
+      .hero h1{font-size:28px}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site">
+    <div class="wrap">
+      <div class="nav">
+        <a href="#" class="logo" aria-label="SafariBookings home">
+          <span class="top">
+            <svg class="paw" viewBox="0 0 64 40" aria-hidden="true"><path d="M10 30c-4 0-6-3-6-6s3-8 8-8c6 0 10 5 16 5s7-4 13-4c7 0 10 6 10 10 0 5-4 9-10 9-7 0-9-3-15-3-5 0-9 3-16 3z" opacity=".55"/><circle cx="14" cy="12" r="4"/><circle cx="26" cy="7" r="4"/><circle cx="39" cy="7" r="4"/><circle cx="51" cy="12" r="4"/></svg>
+            <span>SAFARIBOOKINGS<sup>&reg;</sup></span>
+          </span>
+          <span class="sub">COMPARE AFRICAN SAFARI TOURS</span>
+        </a>
+        <nav class="main" aria-label="Primary">
+          <a href="#tours">Safaris &amp; Tours</a>
+          <a href="#countries">Countries &amp; Parks</a>
+          <a href="#operators">Tour Operators</a>
+        </nav>
+        <div class="right">
+          <span class="heart-wrap">
+            <span class="badge">0</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-10-9.2C.5 8.5 2 5 5.5 5 8 5 9.5 6.8 12 9c2.5-2.2 4-4 6.5-4C22 5 23.5 8.5 22 11.8 19.5 16.4 12 21 12 21z"/></svg>
+            List
+          </span>
+          <form class="search" role="search" onsubmit="return false">
+            <input type="search" placeholder="Search" aria-label="Search" />
+            <button type="submit" aria-label="Search"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.8l-.3-.3a6.5 6.5 0 10-.7.7l.3.3v.8l5 5 1.5-1.5-5-5zm-6 0A4.5 4.5 0 1114 9.5 4.5 4.5 0 019.5 14z"/></svg></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" aria-label="Search safaris">
+    <div class="bg" role="img" aria-label="Aerial view of elephants on golden savanna"></div>
+    <div class="content">
+      <h1>Compare 17,610 African Safaris</h1>
+      <p class="tagline">Offered by Top Rated Tour Operators</p>
+      <form class="searchbar" onsubmit="return false">
+        <div class="field">
+          <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1114.5 9 2.5 2.5 0 0112 11.5z"/></svg>
+          <span class="lbl">Where To</span>
+        </div>
+        <div class="field">
+          <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2zm0 16H5V9h14z"/></svg>
+          <span class="lbl">Start Date</span>
+        </div>
+        <div class="field">
+          <svg viewBox="0 0 24 24"><path d="M16 11a4 4 0 10-4-4 4 4 0 004 4zm-8 0a4 4 0 10-4-4 4 4 0 004 4zm0 2c-2.7 0-8 1.3-8 4v3h10v-3c0-1 .4-1.9 1-2.6A13 13 0 008 13zm8 0c-.4 0-.9 0-1.4.1A5 5 0 0118 17v3h6v-3c0-2.7-5.3-4-8-4z"/></svg>
+          <div class="col"><span class="small">Travelers</span><span class="big">2 Adults</span></div>
+        </div>
+        <button class="cta" type="submit">Show 17,610 Tours <span aria-hidden="true">&rsaquo;</span></button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Trust bar -->
+  <div class="trust">
+    <div class="wrap">
+      <div class="row">
+        <span class="item"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm-1 15l-5-5 1.4-1.4L11 14.2l6.6-6.6L19 9z"/></svg><span><b>The Largest</b> Marketplace for African Safaris</span></span>
+        <span class="item"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm-1 15l-5-5 1.4-1.4L11 14.2l6.6-6.6L19 9z"/></svg><span><b>Best Price</b> Guarantee</span></span>
+        <span class="item"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm-1 15l-5-5 1.4-1.4L11 14.2l6.6-6.6L19 9z"/></svg><span><b>173,336</b> Reviews</span></span>
+        <span class="item"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm-1 15l-5-5 1.4-1.4L11 14.2l6.6-6.6L19 9z"/></svg><span><b>227</b> Parks &amp; Reserves</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured in -->
+  <div class="featured">
+    <div class="wrap">
+      <div class="box">
+        <p class="cap"><span>As Featured In</span></p>
+        <div class="logos">
+          <div class="m">THE TIMES<small>LONDON</small></div>
+          <div class="m">Los Angeles<small>TIMES</small></div>
+          <div class="m">travel africa<small>MAGAZINE</small></div>
+          <div class="m">The Times<small>JOHANNESBURG</small></div>
+          <div class="m">CNN<small>TRAVEL</small></div>
+          <div class="m">THE AUSTRALIAN</div>
+          <div class="m">Chicago<small>TRIBUNE</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Countries -->
+  <section id="countries">
+    <div class="wrap">
+      <h2 class="section-title">Top-rated Safari Countries</h2>
+      <div class="countries">
+        <ul class="clist">
+          <li class="active"><button><span class="rank">#1</span><span class="name">Tanzania</span></button></li>
+          <li><button><span class="rank">#2</span><span class="name">Botswana</span></button></li>
+          <li><button><span class="rank">#3</span><span class="name">Kenya</span></button></li>
+          <li><button><span class="rank">#4</span><span class="name">South Africa</span></button></li>
+          <li><button><span class="rank">#5</span><span class="name">Zambia</span></button></li>
+          <li><button><span class="rank">#6</span><span class="name">Namibia</span></button></li>
+          <li><button><span class="rank">#7</span><span class="name">Uganda</span></button></li>
+          <li><button><span class="rank">#8</span><span class="name">Zimbabwe</span></button></li>
+        </ul>
+        <div class="cpanel">
+          <div class="veil"></div>
+          <div class="inner">
+            <h3>Tanzania</h3><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span style="margin-left:8px;font-weight:700">4.8</span><span style="color:#ccc">/5 &ndash; <a href="#" style="color:#9ecbec">2,140 Reviews</a></span>
+            <p class="rank-tag"><b style="color:#fff">#1</b> of 8 Major Safari Countries</p>
+            <p>Tanzania, with its three safari circuits, is one of Africa&rsquo;s top wildlife destinations. The popular Northern circuit incorporates bucket-list landmarks such as Serengeti National Park, Ngorongoro Crater and Mt Kilimanjaro. Repeat visitors might prefer the remote wilderness vibe of the Southern or Western circuits.</p>
+            <div class="facts">
+              <div class="fact"><svg viewBox="0 0 24 24"><path d="M12 1a11 11 0 1011 11A11 11 0 0012 1zm1 17h-2v-2h2zm1.6-7l-.9.9A2.4 2.4 0 0013 15h-2v-.5a3.7 3.7 0 011.1-2.6l1.2-1.3a2 2 0 10-3.4-1.4H8a4 4 0 116.6 3z"/></svg><div><b>Rates (USD)</b><span>$235 to $659 pp/day</span></div></div>
+              <div class="fact"><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2zm0 16H5V9h14z"/></svg><div><b>Best Time to Go</b><span>June to October; January to February</span></div></div>
+              <div class="fact"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm4 11h-5V6h1.5v5.2H16z"/></svg><div><b>High Season</b><span>July to March (North)</span></div></div>
+            </div>
+            <div class="btns">
+              <button class="btn-dark">8,466 Tanzania Safaris <span aria-hidden="true">&rsaquo;</span></button>
+              <button class="btn-dark">Tanzania Operators <span aria-hidden="true">&rsaquo;</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tours -->
+  <section id="tours" style="padding-top:0">
+    <div class="wrap">
+      <h2 class="section-title">Popular Safari Tours</h2>
+      <div class="cards">
+        <article class="tour">
+          <div class="thumb">
+            <img src="images/tour-lions.png" alt="Two lions in golden savanna grass" />
+            <span class="heart"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.2C.5 8.5 2 5 5.5 5 8 5 9.5 6.8 12 9c2.5-2.2 4-4 6.5-4C22 5 23.5 8.5 22 11.8 19.5 16.4 12 21 12 21z"/></svg></span>
+            <span class="title">5-Day Tarangire, Serengeti, Ngorongoro &amp; Manyara Journey</span>
+          </div>
+          <div class="body">
+            <div class="price">$1,752 <small>pp (USD)</small></div>
+            <p class="meta"><b>Tanzania:</b> Private tour &bull; Mid-range &bull; Lodge &amp; Tented Camp</p>
+            <p class="visit"><b>You Visit:</b> Arusha (Start), Tarangire NP, Ngorongoro Crater, Serengeti NP, Lake Manyara NP, Arusha (End)</p>
+            <button class="btn-book" data-tour="5-Day Tarangire, Serengeti, Ngorongoro &amp; Manyara Journey" data-price="$1,752 pp (USD)" data-country="Tanzania"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm-1 15l-5-5 1.4-1.4L11 14.2l6.6-6.6L19 9z"/></svg> Book Now</button>
+          </div>
+          <div class="op">
+            <img src="images/op-guides.png" alt="Serengeti Smile operator" />
+            <div><div class="n">Serengeti Smile</div><div class="r">&#9733;&#9733;&#9733;&#9733;&#9733; 5.0 <span>/5 &ndash; 1,167 Reviews</span></div></div>
+          </div>
+        </article>
+        <article class="tour">
+          <div class="thumb">
+            <img src="images/tour-monkey.png" alt="Red colobus monkey on a branch" />
+            <span class="heart"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.2C.5 8.5 2 5 5.5 5 8 5 9.5 6.8 12 9c2.5-2.2 4-4 6.5-4C22 5 23.5 8.5 22 11.8 19.5 16.4 12 21 12 21z"/></svg></span>
+            <span class="title">9-Day Mid Range Serengeti Wildebeest Migration</span>
+          </div>
+          <div class="body">
+            <div class="price">$3,520 <small>pp (USD)</small></div>
+            <p class="meta"><b>Tanzania:</b> Private tour &bull; Mid-range &bull; Lodge &amp; Tented Camp</p>
+            <p class="visit"><b>You Visit:</b> Arusha (Start), Arusha NP, Tarangire NP, Central Serengeti NP, Northern Serengeti NP, Ngorongoro Crater</p>
+            <button class="btn-book" data-tour="9-Day Mid Range Serengeti Wildebeest Migration" data-price="$3,520 pp (USD)" data-country="Tanzania"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm-1 15l-5-5 1.4-1.4L11 14.2l6.6-6.6L19 9z"/></svg> Book Now</button>
+          </div>
+          <div class="op">
+            <img src="images/op-fleet.png" alt="Meru Slopes Tours operator" />
+            <div><div class="n">Meru Slopes Tours &amp; Safaris</div><div class="r">&#9733;&#9733;&#9733;&#9733;&#9733; 5.0 <span>/5 &ndash; 908 Reviews</span></div></div>
+          </div>
+        </article>
+        <article class="tour">
+          <div class="thumb">
+            <img src="images/tour-lioness.png" alt="Close-up of a lioness face" />
+            <span class="heart"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.2C.5 8.5 2 5 5.5 5 8 5 9.5 6.8 12 9c2.5-2.2 4-4 6.5-4C22 5 23.5 8.5 22 11.8 19.5 16.4 12 21 12 21z"/></svg></span>
+            <span class="title">5-Day Exclusive Tanzania Private Safari</span>
+          </div>
+          <div class="body">
+            <div class="price">$1,700 <small style="color:#333">to</small> $1,750 <small>pp (USD)</small></div>
+            <p class="meta"><b>Tanzania:</b> Private tour &bull; Mid-range &bull; Lodge &amp; Tented Camp</p>
+            <p class="visit"><b>You Visit:</b> Arusha (Start), Tarangire NP, Serengeti NP, Ngorongoro Crater, Arusha (End)</p>
+            <button class="btn-book" data-tour="5-Day Exclusive Tanzania Private Safari" data-price="$1,700 to $1,750 pp (USD)" data-country="Tanzania"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm-1 15l-5-5 1.4-1.4L11 14.2l6.6-6.6L19 9z"/></svg> Book Now</button>
+          </div>
+          <div class="op">
+            <img src="images/op-jeep.png" alt="Go Serengeti African Tours operator" />
+            <div><div class="n">Go Serengeti African Tours</div><div class="r">&#9733;&#9733;&#9733;&#9733;&#9733; 5.0 <span>/5 &ndash; 592 Reviews</span></div></div>
+          </div>
+        </article>
+      </div>
+      <a href="#catalog" class="btn-out">Browse All 17,610 Safari Tours <span aria-hidden="true">&rsaquo;</span></a>
+    </div>
+  </section>
+
+  <!-- Full Catalog: all 17,610 tours -->
+  <section id="catalog" style="background:var(--bg-soft)">
+    <div class="wrap">
+      <h2 class="section-title">All 17,610 Safari Tours</h2>
+      <div class="catalog-tools">
+        <input type="search" id="cat-search" placeholder="Search tours by name or park&hellip;" aria-label="Search tours" />
+        <select id="cat-country" aria-label="Filter by country">
+          <option value="">All Countries</option>
+        </select>
+        <select id="cat-sort" aria-label="Sort tours">
+          <option value="pop">Sort: Most Popular</option>
+          <option value="low">Price: Low to High</option>
+          <option value="high">Price: High to Low</option>
+          <option value="days">Duration: Shortest</option>
+        </select>
+      </div>
+      <p class="catalog-count" id="cat-count"></p>
+      <div class="cat-grid" id="cat-grid"></div>
+      <button class="load-more" id="cat-more" type="button">Show more tours</button>
+    </div>
+  </section>
+
+  <!-- Operators -->
+  <section id="operators" style="background:var(--bg-soft)">
+    <div class="wrap">
+      <h2 class="section-title">Top Rated Tour Operators</h2>
+      <div class="ops">
+        <article class="op-card">
+          <div class="thumb"><img src="images/op-jeep.png" alt="MoAfrika Tours safari jeep" /><span class="ribbon">#1</span><span class="heart"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.2C.5 8.5 2 5 5.5 5 8 5 9.5 6.8 12 9c2.5-2.2 4-4 6.5-4C22 5 23.5 8.5 22 11.8 19.5 16.4 12 21 12 21z"/></svg></span><span class="title">MoAfrika Tours</span></div>
+          <div class="foot"><img src="images/tour-lioness.png" alt="MoAfrika Tours logo" /><div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="rev">5,024 Reviews</div></div></div>
+        </article>
+        <article class="op-card">
+          <div class="thumb"><img src="images/op-guides.png" alt="Suricata Safaris guides" /><span class="ribbon">#2</span><span class="heart"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.2C.5 8.5 2 5 5.5 5 8 5 9.5 6.8 12 9c2.5-2.2 4-4 6.5-4C22 5 23.5 8.5 22 11.8 19.5 16.4 12 21 12 21z"/></svg></span><span class="title">Suricata Safaris</span></div>
+          <div class="foot"><img src="images/tour-monkey.png" alt="Suricata Safaris logo" /><div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="rev">3,592 Reviews</div></div></div>
+        </article>
+        <article class="op-card">
+          <div class="thumb"><img src="images/op-group.png" alt="Axis Africa Expedition team" /><span class="ribbon">#3</span><span class="heart"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.2C.5 8.5 2 5 5.5 5 8 5 9.5 6.8 12 9c2.5-2.2 4-4 6.5-4C22 5 23.5 8.5 22 11.8 19.5 16.4 12 21 12 21z"/></svg></span><span class="title">Axis Africa Expedition &amp; Safaris</span></div>
+          <div class="foot"><img src="images/tour-lions.png" alt="Axis Africa logo" /><div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="rev">3,425 Reviews</div></div></div>
+        </article>
+        <article class="op-card">
+          <div class="thumb"><img src="images/op-fleet.png" alt="Jocky Tours safari fleet" /><span class="ribbon">#4</span><span class="heart"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.2C.5 8.5 2 5 5.5 5 8 5 9.5 6.8 12 9c2.5-2.2 4-4 6.5-4C22 5 23.5 8.5 22 11.8 19.5 16.4 12 21 12 21z"/></svg></span><span class="title">Jocky Tours and Safaris</span></div>
+          <div class="foot"><img src="images/blog-kruger.png" alt="Jocky Tours logo" /><div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="rev">3,337 Reviews</div></div></div>
+        </article>
+      </div>
+      <button class="btn-out">All Top Rated Operators <span aria-hidden="true">&rsaquo;</span></button>
+    </div>
+  </section>
+
+  <!-- Blog -->
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">Latest Blog Posts</h2>
+      <div class="blog">
+        <a class="post" href="#"><img src="images/blog-kruger.png" alt="Elephants on a road in Kruger" /><span class="t">Top 6 Best Private Game Reserves Bordering Kruger National Park</span></a>
+        <a class="post" href="#"><img src="images/blog-market.png" alt="Darajani Market in Stone Town Zanzibar" /><span class="t">Darajani Market in Stone Town Zanzibar - Everything You Need To Know</span></a>
+        <a class="post" href="#"><img src="images/blog-lake.png" alt="Aerial view of Lake Natron" /><span class="t">Guide to visiting Lake Natron &ndash; One of the Deadliest Lakes on Earth</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site">
+    <div class="wrap">
+      <div class="about">
+        <h4>About SafariBookings</h4>
+        <p>SafariBookings is the largest online marketplace for African safari tours. Easily compare offers from top-rated tour operators. Make decisions like a pro by using our 174,693 reviews and 245 destination guides. <a href="#">More About Us</a></p>
+      </div>
+      <div class="fcols">
+        <div>
+          <h5>Our Statistics</h5>
+          <ul>
+            <li class="stat"><b>18</b> safari countries</li>
+            <li class="stat"><b>227</b> parks and reserves</li>
+            <li class="stat"><b>17,610</b> tour packages</li>
+            <li class="stat"><b>3,095</b> tour operators</li>
+            <li class="stat"><b>173,336</b> user reviews</li>
+            <li class="stat"><b>1,357</b> expert reviews</li>
+            <li class="stat"><b>24</b> Africa experts</li>
+          </ul>
+        </div>
+        <div>
+          <h5>Safaris by Park</h5>
+          <ul>
+            <li><a href="#">Kruger Safaris</a></li>
+            <li><a href="#">Masai Mara Safaris</a></li>
+            <li><a href="#">Serengeti Safaris</a></li>
+            <li><a href="#">Okavango Safaris</a></li>
+            <li><a href="#">Pilanesberg Safaris</a></li>
+            <li><a href="#">Amboseli Safaris</a></li>
+            <li><a href="#">Ngorongoro Safaris</a></li>
+            <li><a href="#">Kilimanjaro Treks</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Safaris by Country</h5>
+          <ul>
+            <li><a href="#">Botswana Safaris</a></li>
+            <li><a href="#">Ethiopia Tours</a></li>
+            <li><a href="#">Kenya Safaris</a></li>
+            <li><a href="#">Madagascar Safaris</a></li>
+            <li><a href="#">Malawi Safaris</a></li>
+            <li><a href="#">Mozambique Tours</a></li>
+            <li><a href="#">Namibia Safaris</a></li>
+            <li><a href="#">Rwanda Tours</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Safaris by Type</h5>
+          <ul>
+            <li><a href="#">Luxury Safaris</a></li>
+            <li><a href="#">Budget Safaris</a></li>
+            <li><a href="#">Gorilla Trekking</a></li>
+            <li><a href="#">Family Safaris</a></li>
+            <li><a href="#">Private Safaris</a></li>
+            <li><a href="#">Group Safaris</a></li>
+            <li><a href="#">Honeymoons</a></li>
+            <li><a href="#">Photo Safaris</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>General</h5>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Commitment to Trust</a></li>
+            <li><a href="#">Partner Options</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Cookie Settings</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+          <div class="socials">
+            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13 22v-8h3l1-4h-4V7c0-1 .3-2 2-2h2V1.1C18.7 1 17.5 1 16.4 1 13.9 1 12 2.5 12 5.7V10H9v4h3v8z"/></svg></a>
+            <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18 2h3l-7 8 8 12h-6l-5-6-5 6H3l7-9L2 2h6l4 5zm-1 18h2L8 4H6z"/></svg></a>
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3 0 4.1.1 1 0 1.7.2 2.3.5.6.2 1.1.5 1.6 1s.8 1 1 1.6c.3.6.4 1.3.5 2.3.1 1.1.1 1.4.1 4.1s0 3-.1 4.1c0 1-.2 1.7-.5 2.3-.2.6-.5 1.1-1 1.6s-1 .8-1.6 1c-.6.3-1.3.4-2.3.5-1.1.1-1.4.1-4.1.1s-3 0-4.1-.1c-1 0-1.7-.2-2.3-.5-.6-.2-1.1-.5-1.6-1s-.8-1-1-1.6c-.3-.6-.4-1.3-.5-2.3C2 15 2 14.7 2 12s0-3 .1-4.1c0-1 .2-1.7.5-2.3.2-.6.5-1.1 1-1.6s1-.8 1.6-1c.6-.3 1.3-.4 2.3-.5C8.6 2 9 2 12 2zm0 5a5 5 0 105 5 5 5 0 00-5-5zm0 8.2A3.2 3.2 0 1115.2 12 3.2 3.2 0 0112 15.2zM17.4 5.6a1.2 1.2 0 101.2 1.2 1.2 1.2 0 00-1.2-1.2z"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="currency">
+        <span class="label">Change Currency</span>
+        <button class="pick">USD $ <span aria-hidden="true">&rsaquo;</span></button>
+      </div>
+    </div>
+    <div class="footer-featured">
+      <div class="wrap">
+        <p class="cap">As Featured In</p>
+        <div class="logos">
+          <div class="m">THE TIMES<small>LONDON</small></div>
+          <div class="m">Los Angeles<small>TIMES</small></div>
+          <div class="m">travel africa<small>MAGAZINE</small></div>
+          <div class="m">Times LIVE<small>JOHANNESBURG</small></div>
+          <div class="m">CNN<small>TRAVEL</small></div>
+          <div class="m">THE AUSTRALIAN</div>
+          <div class="m">Chicago<small>TRIBUNE</small></div>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">&copy; 2013 - 2026 SafariBookings.com &ndash; A clone recreation for demonstration purposes.</div>
+  </footer>
+
+  <!-- Booking Modal -->
+  <div class="modal-back" id="modal" role="dialog" aria-modal="true" aria-labelledby="m-title">
+    <div class="modal">
+      <div class="mhead">
+        <button class="mclose" id="m-close" aria-label="Close">&times;</button>
+        <h3 id="m-title">Book Your Safari</h3>
+        <p>Confirm your details &mdash; we&rsquo;ll finalize on WhatsApp</p>
+      </div>
+      <div class="mbody">
+        <div class="tour-summary">
+          <div class="tt" id="m-tour">Safari Tour</div>
+          <div class="tpr" id="m-price">Price on request</div>
+        </div>
+        <form id="book-form">
+          <label for="f-name">Full Name</label>
+          <input type="text" id="f-name" required placeholder="e.g. Jane Doe" />
+
+          <div class="frow">
+            <div>
+              <label for="f-phone">Phone Number</label>
+              <input type="tel" id="f-phone" required placeholder="+1 555 123 4567" />
+            </div>
+            <div>
+              <label for="f-email">Email</label>
+              <input type="email" id="f-email" required placeholder="you@email.com" />
+            </div>
+          </div>
+
+          <div class="frow">
+            <div>
+              <label for="f-nationality">Nationality</label>
+              <input type="text" id="f-nationality" required placeholder="e.g. British" />
+            </div>
+            <div>
+              <label for="f-passport">Passport Number</label>
+              <input type="text" id="f-passport" required placeholder="e.g. A1234567" />
+            </div>
+          </div>
+
+          <label>Travelers</label>
+          <div class="pax-grid">
+            <div class="pax"><span>Men</span><input type="number" id="f-men" min="0" max="500" value="1" /></div>
+            <div class="pax"><span>Women</span><input type="number" id="f-women" min="0" max="500" value="1" /></div>
+            <div class="pax"><span>Children</span><input type="number" id="f-children" min="0" max="500" value="0" /></div>
+          </div>
+          <p class="field-hint">Groups of any size welcome &mdash; more than 100 travelers supported.</p>
+          <div class="pax-total">Total travelers <b id="f-total">2</b></div>
+
+          <label for="f-date">Preferred Start Date</label>
+          <input type="date" id="f-date" required />
+
+          <div class="wa-note">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2z"/></svg>
+            Submitting opens a new tab with your full booking summary and a link to confirm on WhatsApp (+254 107 524 689).
+          </div>
+          <button type="submit" class="btn-wa">
+            <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9s-.4-.1-.6.1-.7.9-.8 1-.3.2-.6.1a7.8 7.8 0 01-2.3-1.4 8.6 8.6 0 01-1.6-2c-.2-.3 0-.4.1-.6l.4-.5a1.8 1.8 0 00.3-.5.5.5 0 000-.5c0-.1-.6-1.5-.8-2s-.4-.4-.6-.4h-.5a1 1 0 00-.7.3A2.9 2.9 0 006 8.8a5 5 0 001.1 2.7 11.5 11.5 0 004.4 3.9c.6.3 1.1.4 1.5.6a3.6 3.6 0 001.6.1c.5-.1 1.7-.7 1.9-1.4s.2-1.2.2-1.3-.2-.2-.5-.3zM12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2z"/></svg>
+            Review Booking &amp; Confirm on WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    "use strict";
+    var WHATSAPP = "254107524689"; // +254 107 524 689
+
+    /* ---- Generate the full catalog of 17,610 tours ---- */
+    var COUNTRIES = [
+      {c:"Tanzania",parks:["Serengeti NP","Ngorongoro Crater","Tarangire NP","Lake Manyara NP","Selous GR"]},
+      {c:"Kenya",parks:["Masai Mara","Amboseli NP","Tsavo NP","Samburu NR","Lake Nakuru NP"]},
+      {c:"Botswana",parks:["Okavango Delta","Chobe NP","Moremi GR","Makgadikgadi Pans","Savuti"]},
+      {c:"South Africa",parks:["Kruger NP","Sabi Sand","Pilanesberg NP","Addo Elephant NP","Madikwe GR"]},
+      {c:"Zambia",parks:["South Luangwa NP","Lower Zambezi NP","Kafue NP","Livingstone"]},
+      {c:"Namibia",parks:["Etosha NP","Sossusvlei","Damaraland","Caprivi Strip"]},
+      {c:"Uganda",parks:["Bwindi NP","Queen Elizabeth NP","Murchison Falls","Kibale NP"]},
+      {c:"Zimbabwe",parks:["Hwange NP","Mana Pools NP","Victoria Falls","Matobo NP"]},
+      {c:"Rwanda",parks:["Volcanoes NP","Akagera NP","Nyungwe NP"]},
+      {c:"Malawi",parks:["Liwonde NP","Majete WR","Lake Malawi"]}
+    ];
+    var STYLES = ["Budget","Mid-range","Luxury"];
+    var LODGING = ["Camping","Lodge","Tented Camp","Lodge & Tented Camp","Luxury Lodge"];
+    var TYPES = ["Private tour","Group tour"];
+    var OPERATORS = [
+      {n:"Serengeti Smile",img:"images/op-guides.png"},
+      {n:"Meru Slopes Tours & Safaris",img:"images/op-fleet.png"},
+      {n:"Go Serengeti African Tours",img:"images/op-jeep.png"},
+      {n:"MoAfrika Tours",img:"images/tour-lioness.png"},
+      {n:"Suricata Safaris",img:"images/tour-monkey.png"},
+      {n:"Axis Africa Expedition",img:"images/tour-lions.png"},
+      {n:"Jocky Tours and Safaris",img:"images/blog-kruger.png"},
+      {n:"Kilima Safari Co.",img:"images/op-group.png"}
+    ];
+    var IMAGES = ["images/tour-lions.png","images/tour-lioness.png","images/tour-monkey.png","images/op-jeep.png","images/blog-kruger.png","images/tanzania.png"];
+    var TOTAL = 17610;
+
+    // deterministic pseudo-random so results are stable
+    function rng(seed){ return function(){ seed=(seed*1103515245+12345)&0x7fffffff; return seed/0x7fffffff; }; }
+
+    var HOOKS = [
+      "This unforgettable journey combines classic game drives with breathtaking scenery",
+      "A carefully paced adventure crafted for first-time and returning safari-goers alike",
+      "Track the Big Five across iconic wilderness with expert local guides",
+      "An immersive wildlife escape blending thrilling game viewing and authentic culture",
+      "Experience Africa's most celebrated parks on this expertly guided expedition",
+      "A bucket-list safari packed with dramatic landscapes and remarkable wildlife encounters"
+    ];
+    var WILDLIFE = ["lions, elephants and giraffe","leopards, cheetah and buffalo","wildebeest, zebra and hippo","rhino, elephant and countless birdlife","big cats and great herds of plains game"];
+
+    function makeDesc(r,country,parks,days,style,lodging){
+      var hook = HOOKS[Math.floor(r()*HOOKS.length)];
+      var wild = WILDLIFE[Math.floor(r()*WILDLIFE.length)];
+      return hook+". Over "+days+" days you will explore "+parks+" in "+country.c+
+        ", enjoying "+style.toLowerCase()+" "+lodging.toLowerCase()+" accommodation and daily guided game drives in search of "+wild+
+        ". All park fees, ground transport in a 4x4 safari vehicle and meals as specified are included.";
+    }
+
+    var TOURS = [];
+    (function build(){
+      var r = rng(97);
+      for(var i=0;i<TOTAL;i++){
+        var country = COUNTRIES[Math.floor(r()*COUNTRIES.length)];
+        var days = 3 + Math.floor(r()*13); // 3-15
+        var style = STYLES[Math.floor(r()*STYLES.length)];
+        var lodging = LODGING[Math.floor(r()*LODGING.length)];
+        var type = TYPES[Math.floor(r()*TYPES.length)];
+        var op = OPERATORS[Math.floor(r()*OPERATORS.length)];
+        var img = IMAGES[Math.floor(r()*IMAGES.length)];
+        // shuffle a couple parks
+        var p1 = country.parks[Math.floor(r()*country.parks.length)];
+        var p2 = country.parks[Math.floor(r()*country.parks.length)];
+        var parks = p1===p2 ? p1 : (p1+", "+p2);
+        var perDay = (style==="Luxury"?520:style==="Mid-range"?300:180) + Math.floor(r()*140);
+        var price = perDay*days;
+        var rating = (4.3 + r()*0.7).toFixed(1);
+        var reviews = 20 + Math.floor(r()*1800);
+        TOURS.push({
+          id:i,
+          name:days+"-Day "+style+" "+country.c+" Safari",
+          country:country.c, parks:parks, days:days, style:style,
+          lodging:lodging, type:type, op:op, img:img,
+          price:price, rating:rating, reviews:reviews,
+          desc:makeDesc(r,country,parks,days,style,lodging)
+        });
+      }
+    })();
+
+    function money(n){ return "$"+n.toLocaleString("en-US"); }
+    function stars(){ return "\u2605\u2605\u2605\u2605\u2605"; }
+
+    /* ---- Populate country filter ---- */
+    var selCountry = document.getElementById("cat-country");
+    COUNTRIES.forEach(function(c){
+      var o=document.createElement("option"); o.value=c.c; o.textContent=c.c; selCountry.appendChild(o);
+    });
+
+    /* ---- Catalog rendering with filtering + pagination ---- */
+    var grid = document.getElementById("cat-grid");
+    var countEl = document.getElementById("cat-count");
+    var moreBtn = document.getElementById("cat-more");
+    var searchEl = document.getElementById("cat-search");
+    var sortEl = document.getElementById("cat-sort");
+    var PAGE = 12, shown = 0, filtered = TOURS;
+
+    function applyFilters(){
+      var q = searchEl.value.trim().toLowerCase();
+      var country = selCountry.value;
+      filtered = TOURS.filter(function(t){
+        if(country && t.country!==country) return false;
+        if(q && (t.name.toLowerCase().indexOf(q)===-1 && t.parks.toLowerCase().indexOf(q)===-1)) return false;
+        return true;
+      });
+      var s = sortEl.value;
+      if(s==="low") filtered=filtered.slice().sort(function(a,b){return a.price-b.price;});
+      else if(s==="high") filtered=filtered.slice().sort(function(a,b){return b.price-a.price;});
+      else if(s==="days") filtered=filtered.slice().sort(function(a,b){return a.days-b.days;});
+      else filtered=filtered.slice().sort(function(a,b){return b.reviews-a.reviews;});
+      shown=0; grid.innerHTML="";
+      renderMore();
+    }
+
+    function renderMore(){
+      var frag=document.createDocumentFragment();
+      var end=Math.min(shown+PAGE, filtered.length);
+      for(var i=shown;i<end;i++){
+        var t=filtered[i];
+        var card=document.createElement("article");
+        card.className="cat-card";
+        card.innerHTML =
+          '<div class="ct"><img src="'+t.img+'" alt="'+t.name+'" loading="lazy" /><span class="flag">'+t.country+'</span></div>'+
+          '<div class="cb">'+
+            '<h4>'+t.name+'</h4>'+
+            '<div class="cp">'+money(t.price)+' <small>pp (USD)</small></div>'+
+            '<div class="cm">'+t.type+' &bull; '+t.style+' &bull; '+t.lodging+'</div>'+
+            '<div class="cm"><b>Visits:</b> '+t.parks+'</div>'+
+            '<p class="cdesc">'+t.desc+'</p>'+
+            '<div class="co"><span class="stars">'+stars()+'</span> '+t.rating+' &ndash; '+t.reviews.toLocaleString("en-US")+' reviews &middot; '+t.op.n+'</div>'+
+          '</div>';
+        var actions=document.createElement("div");
+        actions.className="cactions";
+        var explore=document.createElement("button");
+        explore.className="btn-explore";
+        explore.textContent="Explore Tour";
+        var btn=document.createElement("button");
+        btn.className="btn-book";
+        btn.innerHTML='<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm-1 15l-5-5 1.4-1.4L11 14.2l6.6-6.6L19 9z"/></svg> Book Now';
+        (function(tt){
+          explore.addEventListener("click",function(){ openExplore(tt); });
+          btn.addEventListener("click",function(){ openModal(tt.name, money(tt.price)+" pp (USD)", tt.country); });
+        })(t);
+        actions.appendChild(explore);
+        actions.appendChild(btn);
+        card.querySelector(".cb").appendChild(actions);
+        frag.appendChild(card);
+      }
+      grid.appendChild(frag);
+      shown=end;
+      if(filtered.length===0){
+        grid.innerHTML='<p class="no-res">No tours match your search. Try a different keyword or country.</p>';
+      }
+      countEl.innerHTML="Showing <b>"+shown.toLocaleString("en-US")+"</b> of <b>"+filtered.length.toLocaleString("en-US")+"</b> tours";
+      moreBtn.style.display = shown<filtered.length ? "block" : "none";
+    }
+
+    moreBtn.addEventListener("click",renderMore);
+    searchEl.addEventListener("input",applyFilters);
+    selCountry.addEventListener("change",applyFilters);
+    sortEl.addEventListener("change",applyFilters);
+    applyFilters();
+
+    /* ---- Booking modal + WhatsApp confirmation ---- */
+    var modal=document.getElementById("modal");
+    var mTour=document.getElementById("m-tour");
+    var mPrice=document.getElementById("m-price");
+    var current={name:"",price:"",country:"",tour:null};
+
+    function decode(s){ var d=document.createElement("textarea"); d.innerHTML=s; return d.value; }
+    function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+
+    // live total travelers
+    var menEl=document.getElementById("f-men"), womenEl=document.getElementById("f-women"), childEl=document.getElementById("f-children"), totalEl=document.getElementById("f-total");
+    function calcTotal(){
+      var m=parseInt(menEl.value,10)||0, w=parseInt(womenEl.value,10)||0, c=parseInt(childEl.value,10)||0;
+      var tot=m+w+c; totalEl.textContent=tot.toLocaleString("en-US");
+      return {m:m,w:w,c:c,tot:tot};
+    }
+    [menEl,womenEl,childEl].forEach(function(el){ el.addEventListener("input",calcTotal); });
+
+    function openModal(name,price,country,tour){
+      current.name=decode(name); current.price=decode(price); current.country=country||""; current.tour=tour||null;
+      mTour.textContent=current.name;
+      mPrice.textContent=current.price;
+      calcTotal();
+      modal.classList.add("open");
+      document.body.style.overflow="hidden";
+      var d=document.getElementById("f-date");
+      if(!d.value){ var t=new Date(); t.setDate(t.getDate()+30); d.value=t.toISOString().slice(0,10); d.min=new Date().toISOString().slice(0,10); }
+    }
+    function closeModal(){ modal.classList.remove("open"); document.body.style.overflow=""; }
+
+    /* ---- Explore Tour: open a new tab with full tour details ---- */
+    function openExplore(t){
+      var w=window.open("","_blank");
+      if(!w){ openModal(t.name, money(t.price)+" pp (USD)", t.country, t); return; }
+      var waMsg=encodeURIComponent("Hello SafariBookings! I'm interested in the "+t.name+" ("+money(t.price)+" pp). Please share availability.");
+      var itinerary="";
+      for(var d=1; d<=t.days; d++){
+        itinerary+='<li><b>Day '+d+':</b> '+(d===1?'Arrival &amp; transfer, afternoon game drive':(d===t.days?'Final morning drive &amp; departure transfer':'Full-day guided game drives in '+t.parks))+'</li>';
+      }
+      w.document.write(
+        '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'+
+        '<title>'+esc(t.name)+' | SafariBookings</title>'+
+        '<style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:Georgia,serif;color:#333;background:#f4f1ea}'+
+        '.hero{position:relative;height:340px}.hero img{width:100%;height:100%;object-fit:cover}'+
+        '.hero .ov{position:absolute;inset:0;background:linear-gradient(transparent,rgba(0,0,0,.75));display:flex;align-items:flex-end;padding:30px}'+
+        '.hero h1{color:#fff;font-size:34px;max-width:900px}.wrap{max-width:900px;margin:0 auto;padding:26px 20px}'+
+        '.flag{display:inline-block;background:#8B2F26;color:#fff;font-size:13px;padding:5px 12px;border-radius:3px;margin-bottom:10px;font-family:Arial}'+
+        '.price{font-size:26px;color:#2e8b57;font-weight:bold;margin:8px 0}.meta{font-family:Arial;color:#555;margin-bottom:16px}'+
+        '.card{background:#fff;border:1px solid #e5e0d5;border-radius:6px;padding:22px;margin-bottom:20px}'+
+        'h2{font-size:22px;margin-bottom:12px;color:#8B2F26}p{line-height:1.7;margin-bottom:10px}ul{padding-left:20px;line-height:1.8;font-family:Arial;font-size:15px}'+
+        '.book{display:inline-block;background:#25D366;color:#fff;text-decoration:none;padding:15px 28px;border-radius:5px;font-family:Arial;font-weight:bold;font-size:17px}'+
+        '.book2{display:inline-block;background:#E8821E;color:#fff;text-decoration:none;padding:15px 28px;border-radius:5px;font-family:Arial;font-weight:bold;font-size:17px;margin-left:10px}'+
+        '.rev{font-family:Arial;color:#E8821E;font-weight:bold}</style></head><body>'+
+        '<div class="hero"><img src="'+location.origin+'/'+t.img+'" alt="'+esc(t.name)+'"><div class="ov"><h1>'+esc(t.name)+'</h1></div></div>'+
+        '<div class="wrap">'+
+          '<span class="flag">'+esc(t.country)+'</span>'+
+          '<div class="price">'+money(t.price)+' <span style="font-size:15px;color:#888">per person (USD)</span></div>'+
+          '<div class="meta">'+esc(t.type)+' &bull; '+esc(t.style)+' &bull; '+esc(t.lodging)+' &bull; '+t.days+' days &bull; <span class="rev">&#9733; '+t.rating+'</span> ('+t.reviews.toLocaleString("en-US")+' reviews)</div>'+
+          '<div class="card"><h2>Overview</h2><p>'+esc(t.desc)+'</p></div>'+
+          '<div class="card"><h2>You Visit</h2><p>'+esc(t.parks)+'</p></div>'+
+          '<div class="card"><h2>Day-by-Day Itinerary</h2><ul>'+itinerary+'</ul></div>'+
+          '<div class="card"><h2>Operated By</h2><p>'+esc(t.op.n)+' &mdash; <span class="rev">&#9733; '+t.rating+'/5</span></p></div>'+
+          '<a class="book" href="https://wa.me/'+WHATSAPP+'?text='+waMsg+'" target="_blank" rel="noopener">Book on WhatsApp</a>'+
+          '<a class="book2" href="'+location.origin+location.pathname+'#catalog" target="_blank" rel="noopener">Back to All Tours</a>'+
+        '</div></body></html>'
+      );
+      w.document.close();
+    }
+
+    document.getElementById("m-close").addEventListener("click",closeModal);
+    modal.addEventListener("click",function(e){ if(e.target===modal) closeModal(); });
+    document.addEventListener("keydown",function(e){ if(e.key==="Escape") closeModal(); });
+
+    // wire existing showcase Book Now buttons
+    document.querySelectorAll(".tour .btn-book").forEach(function(b){
+      b.addEventListener("click",function(){
+        openModal(b.getAttribute("data-tour"), b.getAttribute("data-price"), b.getAttribute("data-country"));
+      });
+    });
+
+    // hero CTA + browse buttons jump to catalog
+    var heroCta=document.querySelector(".searchbar .cta");
+    if(heroCta) heroCta.addEventListener("click",function(){ document.getElementById("catalog").scrollIntoView({behavior:"smooth"}); });
+
+    // submit -> open a new tab with full booking details + WhatsApp confirmation
+    document.getElementById("book-form").addEventListener("submit",function(e){
+      e.preventDefault();
+      var name=document.getElementById("f-name").value.trim();
+      var phone=document.getElementById("f-phone").value.trim();
+      var email=document.getElementById("f-email").value.trim();
+      var nationality=document.getElementById("f-nationality").value.trim();
+      var passport=document.getElementById("f-passport").value.trim();
+      var date=document.getElementById("f-date").value;
+      var pax=calcTotal();
+      if(pax.tot<1){ alert("Please add at least one traveler."); return; }
+
+      var ref="SB-"+Date.now().toString(36).toUpperCase();
+      var paxLine=pax.m+" men, "+pax.w+" women, "+pax.c+" children";
+
+      var msg=
+        "Hello SafariBookings! I would like to confirm a safari booking:\n\n"+
+        "Booking Ref: "+ref+"\n"+
+        "Tour: "+current.name+"\n"+
+        (current.country?("Country: "+current.country+"\n"):"")+
+        "Price: "+current.price+"\n"+
+        "Name: "+name+"\n"+
+        "Phone: "+phone+"\n"+
+        "Email: "+email+"\n"+
+        "Nationality: "+nationality+"\n"+
+        "Passport No: "+passport+"\n"+
+        "Travelers: "+pax.tot+" ("+paxLine+")\n"+
+        "Preferred start date: "+date+"\n\n"+
+        "Please confirm availability. Thank you!";
+      var waUrl="https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(msg);
+
+      function row(k,v){ return '<tr><th>'+k+'</th><td>'+esc(v)+'</td></tr>'; }
+      var win=window.open("","_blank");
+      if(win){
+        win.document.write(
+          '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'+
+          '<title>Booking '+ref+' | SafariBookings</title>'+
+          '<style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:Arial,Helvetica,sans-serif;background:#f4f1ea;color:#333;padding:24px}'+
+          '.sheet{max-width:640px;margin:0 auto;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.15)}'+
+          '.top{background:#8B2F26;color:#fff;padding:26px 28px}.top h1{font-family:Georgia,serif;font-size:26px}.top p{color:#f0cfc9;margin-top:4px;font-size:14px}'+
+          '.ref{display:inline-block;margin-top:12px;background:rgba(255,255,255,.15);padding:6px 12px;border-radius:4px;font-size:14px;letter-spacing:1px}'+
+          '.body{padding:26px 28px}h2{font-size:15px;text-transform:uppercase;letter-spacing:1px;color:#8B2F26;margin:18px 0 8px}h2:first-child{margin-top:0}'+
+          'table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:9px 0;border-bottom:1px solid #eee;font-size:15px;vertical-align:top}'+
+          'th{width:42%;color:#666;font-weight:600}td{color:#222}'+
+          '.tour-name{font-family:Georgia,serif;font-size:20px;color:#333;margin-bottom:4px}.price{color:#2e8b57;font-weight:bold;font-size:18px}'+
+          '.wa{display:flex;align-items:center;justify-content:center;gap:10px;background:#25D366;color:#fff;text-decoration:none;padding:16px;border-radius:6px;font-weight:bold;font-size:18px;margin-top:22px}'+
+          '.note{font-size:13px;color:#888;text-align:center;margin-top:14px;line-height:1.6}</style></head><body>'+
+          '<div class="sheet">'+
+            '<div class="top"><h1>Booking Summary</h1><p>Please review your details, then confirm on WhatsApp.</p><span class="ref">Ref '+ref+'</span></div>'+
+            '<div class="body">'+
+              '<h2>Selected Safari</h2>'+
+              '<div class="tour-name">'+esc(current.name)+'</div>'+
+              (current.country?'<div style="color:#666;font-size:14px;margin-bottom:4px">'+esc(current.country)+'</div>':'')+
+              '<div class="price">'+esc(current.price)+'</div>'+
+              '<h2>Lead Traveler</h2><table>'+
+                row("Full Name",name)+row("Phone Number",phone)+row("Email",email)+row("Nationality",nationality)+row("Passport No.",passport)+
+              '</table>'+
+              '<h2>Party</h2><table>'+
+                row("Men",pax.m)+row("Women",pax.w)+row("Children",pax.c)+row("Total Travelers",pax.tot)+
+              '</table>'+
+              '<h2>Trip</h2><table>'+row("Preferred Start Date",date)+'</table>'+
+              '<a class="wa" href="'+waUrl+'" target="_blank" rel="noopener">Confirm this booking on WhatsApp</a>'+
+              '<p class="note">Your details are pre-filled in the WhatsApp message to +254 107 524 689.<br>Keep reference <b>'+ref+'</b> for your records.</p>'+
+            '</div>'+
+          '</div></body></html>'
+        );
+        win.document.close();
+      } else {
+        // popup blocked — fall back to WhatsApp directly
+        window.location.href=waUrl;
+      }
+      closeModal();
+    });
+  })();
+  </script>
+</body>
+</html>
